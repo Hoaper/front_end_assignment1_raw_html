@@ -1,0 +1,77 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    color: rgb(37, 31, 31);
+}
+
+nav.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    max-height: 20rem;
+    padding: 0.5rem 1rem;
+}
+
+nav.header img {
+    float: left;
+}
+
+ul.list_of_helps {
+    display: grid;
+    padding: 1rem 2rem;
+    gap: 2rem 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 0.5fr));;
+}
+
+ul.list_of_helps li {
+    padding: 2rem;
+    background-color: rgba(118, 142, 164, 0.315);
+    border: 2px solid rgb(44, 44, 44);
+    border-radius: 10px;
+    width: 150px;
+    height: 300px;
+}
+
+ul.list_of_helps li form {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    height: inherit;
+}
+
+ul.list_of_helps li form p {
+    margin-top: 1rem;
+    max-height: inherit;
+}
+
+ul.list_of_helps li form input[type="range"] {
+    margin-top: auto !important;
+    margin-bottom: 5px !important;
+}
+
+.volounteers_table {
+    padding: 1rem 0.5rem;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  td, th {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  tr:hover {
+    background-color: #f5f5f5;
+  }
+  
