@@ -6,6 +6,14 @@
     color: rgb(37, 31, 31);
 }
 
+a {
+    text-decoration: none !important; 
+}
+
+.list-group, .list-group-item {
+    border: none;
+}
+
 nav.header {
     display: flex;
     align-items: center;
@@ -23,38 +31,39 @@ ul.list_of_helps {
     display: grid;
     padding: 1rem 2rem;
     gap: 2rem 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(calc(3rem + 150px), 0.5fr));
+    grid-template-columns: repeat(auto-fit, minmax(calc(3rem + 200px), 0.5fr));
     place-content: center;
 }
 
-ul.list_of_helps li {
+ul.list_of_helps .card {
     padding: 2rem;
     background-color: rgb(118 180 130 / 32%);
     border: 2px solid rgb(44, 44, 44);
     border-radius: 10px;
-    width: 150px;
-    height: 300px;
+    width: inherit;
+    height: inherit;
 }
 
-ul.list_of_helps li form {
+ul.list_of_helps .card form {
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
     height: inherit;
 }
 
-ul.list_of_helps li form p {
+ul.list_of_helps .card form p {
     margin-top: 1rem;
     max-height: inherit;
 }
 
-ul.list_of_helps li form input[type="range"] {
+ul.list_of_helps .card form input[type="range"] {
     margin-top: auto !important;
     margin-bottom: 5px !important;
 }
 
 .volounteers_table {
     padding: 1rem 0.5rem;
+    margin-bottom: 1rem
 }
 
 .mission {
@@ -66,6 +75,7 @@ ul.list_of_helps li form input[type="range"] {
 
 .mission h3 {
     border: 2px green solid;
+    width: 50rem;
     border-radius: 10px;
     padding: 1rem 2rem;
 }
@@ -100,3 +110,15 @@ tr:hover {
     background-color: #f5f5f5;
 }
   
+.accordion {
+    padding: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    .carousel-section {
+        padding: 0 0 2rem 0 !important;
+    }
+    .carousel-item img {
+        height: 20rem !important;
+    }
+}
