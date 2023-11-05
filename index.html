@@ -11,6 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <title>Volunteer's Club</title>
 </head>
 <body>
@@ -42,10 +43,6 @@
                         <li><a class="dropdown-item" href="#">Some doc here</a></li>
                     </ul>
                     </li>
-                </ul>
-                <ul class="list-group list-group-horizontal">
-                    <li class="list-group-item">Who we are?</li>
-                    <li class="list-group-item">Director</li>
                 </ul>
             </div>
         </div>
@@ -284,39 +281,15 @@
               </div>
     </section>
     <section class="container">
-      <div class="container py-5 h-100">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-          <div class="col col-xl-10">
-    
-            <div class="card">
-              <div class="card-body p-5">
-    
-                <div class="form-outline flex-fill">
-                  <input id="todo-list-input" type="text" id="form2" class="form-control" />
-                  <label class="form-label" for="form2">New task...</label>
-                </div>
-                <button id="todo-list-btn" type="submit" class="btn btn-info ms-2">Add</button>
-
-                <div class="tab-content" id="ex1-content">
-                  <div class="tab-pane fade show active" id="ex1-tabs-1" role="tabpanel"
-                    aria-labelledby="ex1-tab-1">
-                    <ul class="list-group mb-0" id="tasks-list">
-                    </ul>
-                  </div>
-                </div>
-    
-              </div>
-            </div>
-    
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="container">
       <div class="card p-3 mx-auto" style="width: 25rem;">
         
           <h1>
             Send feedback
+            <div class="tooltip-container">
+              <i class="fas fa-info-circle" id="tooltip-icon"></i>
+              <p id="tooltip-text">Мы собираем ваши отзывы чтобы становиться лучше!</p>
+           </div>
+           
           </h1>
           <div class="container">
             <div class="mb-3">
@@ -331,21 +304,23 @@
       </div>
     </section>
 
-    <div class="toast-container show position-fixed bottom-0 end-0 p-3" role="alert" aria-live="assertive" aria-atomic="true">
-      <div id="liveToast" class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="toast-body" id="countdown-body">
-          <label for="time_input_hours">Hours</label>
-          <input type="number" id="time_input_hours" required>
-          <br>
-          <label for="time_input_mins">Minutes</label>
-          <input type="number" id="time_input_mins" required>
-          <button id="time_btn" type="btn btn-primary">START</button>
-        </div>
-      </div>
-    </div>
+    <hr />
+
+    
+    <section class="container card p-3 mx-auto" style="width: 250px; margin-bottom: 2rem;">
+      <audio id="myAudio">
+        <source src="audio/lol.mp3" type="audio/mp3">
+        Your browser does not support the audio tag.
+      </audio>
+     
+      <button id="playButton">Play Funny Sound</button>
+
+      <a href="game.html">Play some game, bro!</a>
+  
+    </section>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="js/todo.js"></script>
-    <script src="js/countdown.js"></script>
     <script src="js/feedback.js"></script>
+    <script src="js/fun.js"></script>
 </body>
 </html>

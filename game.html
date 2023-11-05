@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        #game-container {
+            width: 400px;
+            height: 400px;
+            border: 2px solid #333;
+            position: relative;
+        }
+
+        .snake-part {
+            width: 20px;
+            height: 20px;
+            background-color: #3498db;
+            position: absolute;
+        }
+
+        .food {
+            width: 20px;
+            height: 20px;
+            background-color: #e74c3c;
+            position: absolute;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+<div id="game-container"></div>
+<script>
+    $(document).ready(function () {
+        const gameContainer = $("#game-container");
+        const gridSize = 20;
+        let snake = [{ x: 100, y: 100 }];
+        let direction = "right";
+        let food = generateFood();
+
+        function generateFood() {
+            const x = Math.floor(Math.random() * (gameContainer.width() / gridSize)) * gridSize;
+            const y = Math.floor(Math.random() * (gameContainer.height() / gridSize)) * gridSize;
+            const foodElement = $('<div class="food"></div>');
+            foodElement.css({ left: x, top: y });
+            gameContainer.append(foodElement);
+            return { x, y, element: foodElement };
+        }
+
+        function updateSnake() {
+            const head = Object.assign({}, snake[0]);
+
+            switch (direction) {
+                case "up":
+                    head.y -= gridSize;
+                    break;
+                case "down":
+                    head.y += gridSize;
+                    break;
+                case "left":
+                    head.x -= gridSize;
+                    break;
+                case "right":
+                    head.x += gridSize;
+                    break;
+            }
+
+            snake.unshift(head);
+
+            if (head.x === food.x && head.y === food.y) {
+                food.element.remove();
+                food = generateFood();
+            } else {
+                const tail = snake.pop();
+                $("#" + tail.x + "-" + tail.y).remove();
+            }
+
+            if (head.x < 0 || head.x >= gameContainer.width() || head.y < 0 || head.y >= gameContainer.height()) {
+                endGame();
+            }
+
+            for (let i = 1; i < snake.length; i++) {
+                if (head.x === snake[i].x && head.y === snake[i].y) {
+                    endGame();
+                }
+            }
+
+            renderSnake();
+        }
+
+        function renderSnake() {
+            $(".snake-part").remove();
+
+            snake.forEach(part => {
+                const snakePart = $('<div class="snake-part"></div>');
+                snakePart.css({ left: part.x, top: part.y });
+                gameContainer.append(snakePart);
+            });
+        }
+
+        function endGame() {
+            window.location.reload();
+        }
+
+        $(document).keydown(function (e) {
+            switch (e.which) {
+                case 37:
+                    if (direction !== "right") {
+                        direction = "left";
+                    }
+                    break;
+                case 38:
+                    if (direction !== "down") {
+                        direction = "up";
+                    }
+                    break;
+                case 39:
+                    if (direction !== "left") {
+                        direction = "right";
+                    }
+                    break;
+                case 40:
+                    if (direction !== "up") {
+                        direction = "down";
+                    }
+                    break;
+            }
+        });
+
+        setInterval(updateSnake, 150);
+    });
+</script>
+
+</body>
+</html>

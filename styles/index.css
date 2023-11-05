@@ -122,3 +122,25 @@ tr:hover {
         height: 20rem !important;
     }
 }
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+ }
+ #tooltip-icon::before {
+    width: 15px;
+    height: 15px;
+ }
+ 
+ #tooltip-text {
+    display: none;
+    width: 15rem;
+    height: 6vh;
+    position: absolute;
+    background-color: #333;
+    font-size: 15px;
+    color: #fff;
+    padding: 5px;
+    border-radius: 3px;
+    z-index: 1;
+ }
+ 
