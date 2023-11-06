@@ -121,6 +121,10 @@ tr:hover {
     .carousel-item img {
         height: 20rem !important;
     }
+    #chartContainer {
+        padding-top: 2rem;
+        flex-direction: column;
+    }
 }
 .tooltip-container {
     position: relative;

@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <title>Volunteer's Club</title>
 </head>
 <body>
@@ -180,28 +181,13 @@
                     </form>
                 </div>
             </li>
-            <li>
-                <div class="card">
-                    <form method="GET">
-                        <h4>Кроллик Antony</h4>
-                        <img 
-                            width="150px"
-                            height="100px"
-                            src="https://gde.ru/images/img_ru/474x354/35684197.jpg" 
-                            alt="rabbit antony"
-                        />
-                        <p>
-                            У моего кролика зуд и выпадение шерсти. Что это может сигнализировать, и как помочь?
-                        </p>
-                        <input hidden name="id#12432" />
-                        <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                        <input type="range" class="form-range" id="customRange6">
-                        <button type="submit" class="btn btn-primary">Help me</button>
-                    </form>
-                </div>
-            </li>
         </ul>
+
+        <div id="chartContainer" style="width: 100%; display: flex;">
+          
+          <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+          <h1 style="align-self: center; padding-left: 4rem;">How much we donate to the charity.</h1>
+        </div>
 
         <div class="volounteers_table">
             <h2>Last 4 volunteers:</h2>
@@ -321,6 +307,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="js/feedback.js"></script>
+    <script src="js/myChart.js"></script>
     <script src="js/fun.js"></script>
 </body>
 </html>
